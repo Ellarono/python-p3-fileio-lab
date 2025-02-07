@@ -1,8 +1,18 @@
-def write_file(file_name, file_content):
-    pass
+def write_file(file_name, content):
+    if not str(file_name).endswith('.txt'):
+        file_name = f"{file_name}.txt"
+    with open(file_name, 'w') as f:
+        f.write(content)
 
-def append_file(file_name, append_content):
-    pass
+
+def append_file(file_name, content):
+    if not str(file_name).endswith('.txt'):
+        file_name = f"{file_name}.txt"
+    with open(file_name, 'a') as f:
+        f.write(content)
 
 def read_file(file_name):
-    pass
+    if not str(file_name).endswith('.txt'):
+        file_name = f"{file_name}.txt"
+    with open(file_name, 'r') as f:
+        return f.read()
